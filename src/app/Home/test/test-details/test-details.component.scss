@@ -1,0 +1,57 @@
+body {
+  background: #eee !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-qcm-test {
+  max-width: 600px;
+  padding: 20px 40px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  .form-qcm-test-heading {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .question {
+    margin-bottom: 25px;
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        label {
+          font-size: 16px;
+          font-weight: normal;
+
+          input[type="radio"] {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 20px;
+    width: 100%;
+  }
+}

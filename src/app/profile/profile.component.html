@@ -1,0 +1,49 @@
+<div class="tabulation-style">
+  <a (click)="currenttab=0" [class.active]="currenttab === 0">Main Profile</a>
+  <a (click)="currenttab=1" [class.active]="currenttab === 1">CV</a>
+  <a (click)="currenttab=2" [class.active]="currenttab === 2">Test</a>
+</div>
+<div *ngIf="currenttab==0" >
+
+<app-profile-details></app-profile-details>
+</div><!--/row-->
+<div *ngIf="currenttab==1">
+  <app-upload-cv></app-upload-cv>
+</div>
+<div *ngIf="currenttab == 2" class="table-container">
+  <p-table [value]="Tests" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nom</th>
+        <th>Pourcentage</th>
+        <th>Score</th>
+        <th>Durée (min)</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-test>
+      <tr>
+        <td>{{ test.nom }}</td>
+        <td>
+          <div class="progress-container">
+            <div class="progress-bar" [style.width.%]="test.pourcentage" [ngClass]="getProgressBarColor(test.pourcentage)">
+              {{ test.pourcentage }}%
+            </div>
+          </div>
+        </td>        <td>{{ test.score }}</td>
+        <td>{{ test.dure }}</td>
+        <td>{{ test.date | date: 'dd/MM/yyyy' }}</td>
+        <p-button
+          icon="pi pi-shield"
+          (click)="opendialog(test)"
+          class="circular-button">
+        </p-button>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+
+
+

@@ -1,0 +1,14 @@
+<div class="job-container">
+  <div class="offre" *ngFor="let job of jobs">
+    <div class="logo-container">
+      <img class="logo" [src]="job.imageUrl" alt="Logo">
+    </div>
+    <div class="details-container">
+      <h1>{{ job.title }}</h1>
+      <p>{{ job.description }}</p>
+      <p>Contact: {{ job.contact }}</p>
+      <li class="pi pi-map-marker">{{ job.location }}</li>
+    </div>
+  </div>
+</div>
+

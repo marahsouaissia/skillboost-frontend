@@ -1,0 +1,118 @@
+/* Container de la barre de tabulation */
+.tabulation-style {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  gap: 1.5rem; /* Espacement modéré entre les onglets */
+  padding: 10px 0; /* Padding vertical */
+  background-color: #ebeeef; /* Fond léger */
+  border-bottom: 2px solid #dee2e6; /* Bordure subtile pour séparation */
+}
+
+/* Style des liens dans les tabs */
+.tabulation-style a {
+  text-decoration: none; /* Supprimer la sous-ligne */
+  color: #007bff; /* Couleur par défaut */
+  padding: 8px 16px; /* Padding modéré pour les onglets */
+  font-size: 16px; /* Taille de police agréable */
+  font-weight: 500; /* Texte légèrement audacieux */
+  border-radius: 4px; /* Coins arrondis simples */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce */
+  cursor: pointer; /* Curseur pointer */
+}
+
+/* Effet de survol */
+.tabulation-style a:hover {
+  background-color: #007bff; /* Fond bleu clair */
+  color: white; /* Texte blanc */
+}
+
+/* Effet actif pour l'onglet sélectionné */
+.tabulation-style a.active {
+  background-color: #007bff; /* Fond bleu */
+  color: white; /* Texte blanc */
+}
+
+
+.table-container {
+  display: flex;
+  justify-content: center;  // Center horizontally
+  align-items: center;      // Center vertically if needed
+  padding: 20px;           // Add some padding around the container
+  background-color: #f8f9fa; // Light background for contrast
+  border-radius: 8px;      // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
+}
+
+.p-table {
+  width: 100%;             // Make table responsive
+  border-collapse: collapse; // Merge borders
+}
+
+.p-table th {
+  background-color: #007bff; // Bootstrap primary color
+  color: white;               // Text color for headers
+  padding: 12px;              // Increased padding for headers
+  text-align: center;         // Center header text
+}
+
+.p-table td {
+  text-align: center;         // Center table cell text
+  padding: 10px;              // Padding for cells
+  border: 1px solid #dee2e6;  // Light gray border
+}
+
+.p-table tr:nth-child(even) {
+  background-color: #f2f2f2;  // Zebra striping for rows
+}
+
+.p-table tr:hover {
+  background-color: #e9ecef; // Highlight row on hover
+}
+.circular-button {
+  width: 40px !important; /* Adjust the size as needed */
+  height: 40px !important; /* Adjust the size as needed */
+  border-radius: 50% !important; /* Makes the button circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Optional: Adjust background color and hover effects
+  background-color: #007ad9; /* Button color */
+  color: white; /* Icon color */
+
+  &:hover {
+    background-color: #005999; /* Darker shade on hover */
+  }
+}
+
+/* Style de la barre de progression */
+.progress-container {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  width: 100%;
+  height: 25px;
+  position: relative;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+/* Couleurs selon le pourcentage */
+.low-progress {
+  background-color: #f44336; /* Rouge pour faible pourcentage */
+}
+
+.medium-progress {
+  background-color: #ff9800; /* Orange pour pourcentage moyen */
+}
+
+.high-progress {
+  background-color: #4caf50; /* Vert pour pourcentage élevé */
+}

@@ -1,0 +1,277 @@
+.home-container {
+  background: #f2f2f2 !important;
+  font-family: 'Arial', sans-serif;
+}
+.head-container {
+  background-image: url('/assets/images/Im_home1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width:100%;
+  height: 50vh;
+}
+.head-container h1{
+  font-family: sans Serif, serif;
+  color:white;
+  width: 50vw;
+  padding: 2rem;
+}
+.head-container h1 span{
+font-weight:bold;
+}
+.head-container h3{
+  font-family: sans Serif, serif;
+  color:white;
+  width: 35vw;
+  margin-left: 0.5rem;
+  margin-top:1rem;
+}
+
+.head-container img{
+  width:4vw;
+  margin-left : 1.2rem;
+}
+.title2{
+  display:flex;
+  align-items: center;
+}
+
+
+.tests-section {
+  display: flex;
+  flex-direction: column; /* Aligner les éléments en colonne */
+  align-items: center; /* Centre horizontalement tous les éléments enfants */
+  margin-top: 4rem; /* Ajout de marge supérieure pour espacer de l'élément précédent */
+  margin-bottom: 4rem;
+}
+
+.title-tests {
+  color: #08407e;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top:5rem;
+}
+
+.button-tests {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2.5rem;
+  background-color: #65A1F2;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  /* Ajout d'un effet de survol */
+  &:hover {
+    background-color: #4a90e2; /* Couleur de fond au survol */
+  }
+}
+
+.job-section{
+  display: flex;
+  flex-direction: row;
+  margin: 6rem;
+}
+
+.job-img{
+  width:30vw;
+  height: 40vh;
+}
+.job-text{
+  width:50vw;
+  margin-right: 4rem;
+}
+.job-text h2 span{
+  font-weight: bolder;
+  color: #241c81;
+}
+
+.job-text p{
+  font-size:1.3rem;
+}
+.job-text p span{
+  font-weight: bolder;
+}
+.job-button{
+  width: 10rem;
+  height: 2.5rem;
+  background-color: #65A1F2;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.test-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.test-list {
+  width: 250px; /* Largeur des box */
+  padding: 20px;
+  border: 2px solid #ddd; /* Bordure des box */
+  border-radius: 10px; /* Coins arrondis */
+  background-color: #f9f9f9; /* Couleur de fond des box */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Pour indiquer que la box est cliquable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre sous les box */
+}
+
+.test-list:hover {
+  transform: translateY(-5px); /* Animation au survol */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.test-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px; /* Espacement sous le logo */
+  object-fit: contain; /* Garde la proportion des logos tout en remplissant l'espace */
+}
+
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.tex {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .test-list-container {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour écrans plus petits */
+  }
+}
+
+@media (max-width: 480px) {
+  .test-list-container {
+    grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+  }
+}
+
+.feedback-section {
+  padding: 50px 0;
+  background-color: #f2f2f2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color:#08407e;
+}
+
+.feedback-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-item {
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.feedback-item.active {
+  display: block;
+  opacity: 1;
+}
+
+.feedback-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.feedback-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.feedback-text {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.feedback-rating {
+  color: gold;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  color: #333;
+}
+
+.nav-btn.prev {
+  left: 10px;
+}
+
+.nav-btn.next {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  color: #000;
+}
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  margin: 2rem auto;
+  width: 100%; /* Optional: Adjust to fit parent container */
+}
+
+.title-stat {
+  //color: #0a0a0a; /* Dark text color */
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem; /* Reduce margin to keep spacing balanced */
+  text-align: center; /* Center the text */
+}
+
+.card {
+  width: 55vw; /* Controls the width of the chart */
+  max-width: 900px; /* Prevent it from becoming too wide on larger screens */
+  height: auto; /* Automatically adjust height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners for modern look */
+  padding: 1rem; /* Space inside the card */
+  background-color: #fff; /* White background for contrast */
+}
+
+p-chart {
+  width: 100%; /* Ensure chart takes up the full width of the card */
+  height: 100%; /* Ensure chart scales properly */
+}
+
+
+
+

@@ -1,0 +1,109 @@
+/* Center the search bar */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  p-floatLabel{
+    width:50%;
+
+  }
+}
+
+/* Style for the search input */
+.input-search {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Container pour la liste des tests */
+.test-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrer horizontalement */
+  gap: 2rem; /* Espacement plus grand entre les éléments */
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+/* Item individuel de test */
+.test-list {
+  background-color: #fff;
+  border-radius: 10px; /* Coins arrondis pour un look moderne */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile pour donner de la profondeur */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 320px; /* Largeur maximale pour une meilleure organisation */
+  text-align: center;
+  overflow: hidden;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* Effet de survol pour agrandir légèrement et ajouter une ombre */
+.test-list:hover {
+  transform: translateY(-5px); /* Légère translation pour l'effet de levitation */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+}
+
+/* Image du logo du test */
+.test-logo {
+  max-width: 80%; /* Réduction de la taille de l'image pour plus d'espace */
+  max-height: 120px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Animation pour l'effet de zoom */
+}
+
+/* On ajoute un effet de zoom léger au survol */
+.test-logo:hover {
+  transform: scale(1.05); /* Zoom sur l'image du logo */
+}
+
+/* Section des informations du test */
+.test-info {
+  padding: 0.5rem;
+  text-align: center;
+  color: #444;
+  margin-top: 1rem;
+}
+
+/* Style du titre du test */
+.test-title {
+  font-size: 1.4rem; /* Taille légèrement plus petite et plus lisible */
+  font-weight: 500; /* Poids de police léger pour plus de douceur */
+  color: #333;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px; /* Espacement léger des lettres */
+  text-transform: capitalize; /* Conserver la casse naturelle */
+  line-height: 1.4;
+}
+
+/* Style de la description du test */
+.test-desc {
+  font-size: 1rem;
+  color: #777;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Réduction des espacements de description pour les petits écrans */
+@media (max-width: 768px) {
+  .test-list {
+    max-width: 280px;
+    padding: 1.2rem;
+  }
+
+  .test-title {
+    font-size: 1.2rem;
+  }
+
+  .test-logo {
+    max-height: 100px;
+  }
+}

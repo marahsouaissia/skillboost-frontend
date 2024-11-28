@@ -1,0 +1,23 @@
+<div class="test-details-container">
+  <mat-card class="test-card">
+    <div class="test-header">
+      <img [src]="test.imageUrl" alt="Test Logo" class="test-logo" />
+      <h1 class="test-title">{{ test.title }}</h1>
+    </div>
+    <div class="test-body">
+      <p class="test-description">{{ test.description }}</p>
+      <p class="test-info">
+        <span><strong>Nombre de questions :</strong> {{ test.numberOfQuestions }}</span>
+      </p>
+      <p class="test-info">
+        <span><strong>Durée :</strong> {{ test.duration }} minutes</span>
+      </p>
+      <p class="test-info">
+        <span><strong>Niveau :</strong> {{ test.level }}</span>
+      </p>
+    </div>
+    <div class="test-footer">
+      <button pButton type="button" label="Démarrer le test" class="start-test-btn" (click)="startTest()"></button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <form class="form-signup" [formGroup]="form" (submit)="onSubmit()">
+    <h2 class="form-signin-heading">S'inscrire</h2>
+
+    <!-- Message d'erreur -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Message de succès -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- FirstName -->
+    <input type="text" class="form-control" formControlName="name" placeholder="Nom" />
+
+    <!-- LastName -->
+    <input type="text" class="form-control" formControlName="lastname" placeholder="Prénom" />
+
+    <!-- Email -->
+    <input type="email" class="form-control" formControlName="email" placeholder="Adresse Email" />
+
+    <!-- Password -->
+    <input type="password" class="form-control" formControlName="password" placeholder="Mot de passe" />
+
+    <!-- Confirm Password -->
+    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirmer le mot de passe" />
+
+    <!-- Submit Button -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
+
+    <!-- Already have an account? -->
+    <div class="signup-footer">
+      <p>Vous avez déjà un compte? <a [routerLink]="['/login']">Se connecter</a></p>
+    </div>
+  </form>
+</div>

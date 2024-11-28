@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <form class="form-qcm-test" (ngSubmit)="onSubmit()">
+    <h2 class="form-qcm-test-heading">Test d'Évaluation des Compétences</h2>
+
+    <!-- Question 1 -->
+    <div class="question">
+      <p>1. Quel est le but principal de Angular ?</p>
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="question1" [(ngModel)]="answers.question1" value="A" required>
+            A. Développer des applications pour mobile uniquement
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" [(ngModel)]="answers.question1" value="B">
+            B. Faciliter le développement d'applications web modernes
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question1" [(ngModel)]="answers.question1" value="C">
+            C. Gérer des bases de données
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+      <p>2. Que signifie le terme "component" dans Angular ?</p>
+      <ul>
+        <li>
+          <label>
+            <input type="radio" name="question2" [(ngModel)]="answers.question2" value="A" required>
+            A. Une directive structurelle
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" [(ngModel)]="answers.question2" value="B">
+            B. Un élément qui encapsule la logique et l'interface utilisateur
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="question2" [(ngModel)]="answers.question2" value="C">
+            C. Une fonction de routing
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Soumettre les réponses</button>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="search-container">
+  <p-floatLabel>
+    <input pInputText id="search" [(ngModel)]="value" class="input-search" />
+    <label for="search">Search</label>
+  </p-floatLabel>
+</div>
+
+<div class="test-list-container">
+  <div *ngFor="let test of Tests" (click)="navigateToTest(test)" class="test-list">
+    <div class="test-item">
+      <img [src]="test.imageUrl" alt="{{ test.title }} logo" class="test-logo" />
+      <div class="test-info">
+        <h2 class="test-title">{{ test.title }}</h2>
+        <p class="test-desc">{{ test.desc }}</p>
+      </div>
+    </div>
+  </div>
+</div>

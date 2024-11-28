@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 class="form-signin-heading">Veuillez vous connecter</h2>
+
+    <!-- Email Input -->
+    <input type="text" class="form-control" formControlName="email" name="username" placeholder="Adresse e-mail" required="" autofocus="" />
+
+    <!-- Password Input -->
+    <input type="password" class="form-control" formControlName="password" name="password" placeholder="Mot de passe" required=""/>
+
+    <!-- Forgot Password -->
+    <label class="checkbox">
+      <a  id="forgotPassword" [routerLink]="['/forgot-password']">Mot de passe oublié ?</a>
+    </label>
+
+    <!-- Sign in Button -->
+    <button class="btn btn-lg btn-primary btn-block"  type="submit">Se connecter</button>
+
+    <!-- Sign Up Section -->
+    <div class="signup">
+      <p>Vous n'avez pas de compte ? <a [routerLink]="['/sign-in']" id="signUp">S'inscrire</a></p>
+    </div>
+  </form>
+</div>

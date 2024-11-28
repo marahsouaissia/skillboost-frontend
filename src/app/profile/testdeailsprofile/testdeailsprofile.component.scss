@@ -1,0 +1,72 @@
+.custom-dialog {
+  position: fixed; // Position fixed for dialog appearance
+  top: 50%; // Center vertically
+  left: 50%; // Center horizontally
+  transform: translate(-50%, -50%); // Adjust for the center
+  background-color: #fff; // White background
+  border-radius: 8px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Shadow for depth
+  width: 400px; // Set a specific width
+  z-index: 1000; // Ensure it appears above other content
+  overflow: hidden; // Prevent overflow
+  transition: all 0.3s ease; // Smooth transition
+
+  .dialog-header {
+    background-color: #ffffff; // Header background color
+    color: #0a0a0a; // Header text color
+    padding: 10px; // Header padding
+    display: flex; // Flexbox for header
+    justify-content: space-between; // Space between items
+    align-items: center; // Center items vertically
+
+    h2 {
+      margin: 0; // Remove margin for h2
+      font-size: 18px; // Set font size for title
+    }
+
+    .close-button {
+      position : absolute;
+      top : 1rem;
+      right : 1rem;
+      background: none; // No background
+      border: none; // No border
+      color: #ff0000; // White color for close button
+      font-size: 20px; // Font size for close button
+      cursor: pointer; // Pointer cursor
+    }
+  }
+
+  .dialog-content {
+    padding: 20px; // Content padding
+    text-align: left; // Left-align text
+  }
+
+  .dialog-footer {
+    padding: 10px; // Footer padding
+    text-align: right; // Align footer content to the right
+
+    .close-button {
+      background-color: #f44336; // Red background for close button
+      color: #fff; // White text
+      border: none; // Remove border
+      padding: 8px 16px; // Padding for button
+      border-radius: 4px; // Rounded corners
+      cursor: pointer; // Pointer cursor
+
+      &:hover {
+        background-color: #d32f2f; // Darker red on hover
+      }
+    }
+  }
+}
+
+// Background overlay
+.overlay {
+  position: fixed; // Fixed position
+  top: 0; // Full height
+  left: 0; // Full width
+  width: 100%; // Full width
+  height: 100%; // Full height
+  background: rgba(0, 0, 0, 0.5); // Semi-transparent background
+  z-index: 999; // Layer below the dialog
+}

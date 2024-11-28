@@ -1,0 +1,48 @@
+.job-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espace entre les offres */
+  padding: 20px; /* Espace autour du conteneur principal */
+  margin-top:2rem;
+}
+
+.offre {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd; /* Bordure de la box */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 10px; /* Espacement interne réduit */
+  background-color: #f9f9f9; /* Couleur de fond */
+  width: 90%; /* Réduire la largeur de la box */
+  margin: 0 auto; /* Centrer la box */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.logo-container {
+  flex: 0 0 25%; /* Réduire la largeur pour le logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 80%; /* Limiter la taille du logo */
+  height: auto; /* Garde les proportions */
+}
+
+.details-container {
+  flex: 1; /* Prend le reste de l'espace disponible */
+  padding-left: 15px; /* Espacement à gauche réduit */
+  margin_bottom:5rem;
+}
+
+h1 {
+  font-size: 18px; /* Taille du titre réduite */
+  margin: 0; /* Pas de marge */
+  font-size:27px;
+}
+
+.pi-map-marker {
+  color: #666; /* Couleur du texte pour la localisation */
+  font-size: 14px; /* Taille de la police pour la localisation */
+}

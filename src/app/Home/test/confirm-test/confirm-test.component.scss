@@ -1,0 +1,80 @@
+/* Container principal */
+.test-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9; /* Légère couleur de fond */
+  padding: 2rem;
+}
+
+/* Carte du test */
+.test-card {
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  border-radius: 10px; /* Coins arrondis */
+  text-align: center;
+  background-color: #fff;
+}
+
+/* En-tête du test */
+.test-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.test-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 1rem;
+}
+
+.test-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Corps du test */
+.test-body {
+  margin-bottom: 2rem;
+}
+
+.test-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.test-info {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+/* Pied de la carte */
+.test-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.start-test-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.start-test-btn:hover {
+  background-color: #0056b3;
+}

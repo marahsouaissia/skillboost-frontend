@@ -1,0 +1,57 @@
+.footer {
+  background-color: #f1f4f6 !important; /* Dark blue background */
+  color: #ffffff; /* White text for contrast */
+  padding: 2rem 1rem;
+}
+
+.footer h5 {
+  color: #66b2ff; /* Lighter blue for headings */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer p,
+.footer a {
+  color: #0a0a0a; /* White text for content and links */
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #66b2ff; /* Lighter blue on hover */
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 0.5rem;
+}
+
+.footer .social-links a {
+  font-size: 1.2rem; /* Slightly larger icons */
+  color: #ffffff; /* White icons */
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #66b2ff; /* Lighter blue on hover */
+}
+
+.footer .text-center {
+  margin-top: 1.5rem;
+}
+
+.footer .text-center p {
+  font-size: 0.8rem; /* Smaller copyright text */
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer .row {
+    text-align: center;
+  }
+
+  .footer .col-md-4 {
+    margin-bottom: 1.5rem; /* Space between columns on small screens */
+  }
+}

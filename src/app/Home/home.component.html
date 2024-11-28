@@ -1,0 +1,85 @@
+<div class='home-container'>
+  <div class='head-container'>
+    <h1 class="Title1">Boostez vos compétences avec des évaluations en ligne avec <span>SkillBoost</span>.</h1>
+    <div class="title2">
+    <img src="/assets/images/Icon1.png">
+    <h3>Gagnez en visibilité et en crédibilité auprès des recruteurs.</h3>
+    </div>
+  </div>
+
+<!--  <div class="chart-container">-->
+<!--    <canvas #userChart></canvas> &lt;!&ndash; Ajoutez cette référence pour le canvas &ndash;&gt;-->
+<!--  </div>-->
+
+
+
+  <div class="job-section">
+    <div class="job-text">
+      <h2>Sélectionnez ou composez les critères
+        <span> d'évaluation en fonction du poste. </span></h2>
+      <p>Sélectionnez les tests selon les compétences attendues.</p>
+      <p><span>Créez vos propres profils métiers </span> pour rassembler les compétences
+        nécessaires au poste.</p>
+      <button type="button" class="job-button" [routerLink]="['/job-opportunities']">Offres d'emploi</button>
+    </div>
+    <div>
+      <img class="job-img" src="assets/images/Im-home2.jpg" alt="Image">
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h4 class="title-stat">Plongez dans Nos Statistiques Captivantes des Utilisateurs par Test</h4>
+    <div class="card" style="width:55vw"  >
+      <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
+  </div>
+
+  <div class="tests-section">
+      <h2 class="title-tets">Rejoignez notre plateforme pour accéder à nos tests. </h2>
+      <button type="button" class="button-tests" [routerLink]="['/login']">S'inscrire</button>
+      <div class="test-list-container">
+      <div *ngFor="let test of Tests" (click)="goToTest(test)" class="test-list">
+        <img [src]="test.imageUrl" alt="{{ test.title }} logo" class="test-logo">
+        <h2>{{ test.title }}</h2>
+        <p class="tex">{{ test.desc }}</p>
+      </div>
+      </div>
+    </div>
+
+
+  <section class="feedback-section">
+    <div class="container text-center">
+      <h2 class="section-title">Avis des Candidats</h2>
+
+      <div class="feedback-slider">
+        <!-- Feedback item -->
+        <div class="feedback-item" *ngFor="let feedback of feedbacks; let i = index" [class.active]="i === currentFeedbackIndex">
+          <div class="feedback-content">
+            <img [src]="feedback.photo" class="feedback-img" alt="Candidate Photo">
+            <h3 class="feedback-name">{{ feedback.name }}</h3>
+            <p class="feedback-text">"{{ feedback.text }}"</p>
+            <div class="feedback-rating">
+              <span *ngFor="let star of getRatingArray(feedback.rating)">&#9733;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flèche gauche pour précédent feedback -->
+        <button class="nav-btn prev" (click)="prevFeedback()">
+          &#10094;
+        </button>
+
+        <!-- Flèche droite pour prochain feedback -->
+        <button class="nav-btn next" (click)="nextFeedback()">
+          &#10095;
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+</div>
+
