@@ -1,23 +1,31 @@
-<div class="test-details-container">
-  <mat-card class="test-card">
+<div class="test-page-container">
+  <!-- Partie gauche : Header -->
+  <div class="test-header-section">
     <div class="test-header">
-      <img [src]="test.imageUrl" alt="Test Logo" class="test-logo" />
+      <img [src]="'assets/images/Logo_angular.png'" alt="Test Logo" class="test-logo" />
       <h1 class="test-title">{{ test.title }}</h1>
     </div>
+  </div>
+
+  <!-- Partie droite : Détails du test -->
+  <div class="test-details-section">
     <div class="test-body">
       <p class="test-description">{{ test.description }}</p>
       <p class="test-info">
-        <span><strong>Nombre de questions :</strong> {{ test.numberOfQuestions }}</span>
+        <i class="pi pi-list"></i> <strong>Nombre de questions :</strong> {{ test.numberOfQuestions }}
       </p>
       <p class="test-info">
-        <span><strong>Durée :</strong> {{ test.duration }} minutes</span>
+        <i class="pi pi-clock"></i> <strong>Durée :</strong> {{ test.duration }} minutes
       </p>
       <p class="test-info">
-        <span><strong>Niveau :</strong> {{ test.level }}</span>
+        <i class="pi pi-star"></i> <strong>Niveau :</strong> {{ test.level }}
       </p>
     </div>
+
+    <!-- Séparateur et bouton -->
     <div class="test-footer">
+      <div class="separator"></div>
       <button pButton type="button" label="Démarrer le test" class="start-test-btn" (click)="startTest()"></button>
     </div>
-  </mat-card>
+  </div>
 </div>

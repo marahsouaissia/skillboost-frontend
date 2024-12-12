@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgForOf} from "@angular/common";
 import { OnInit } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import { Router } from '@angular/router';
@@ -46,16 +46,20 @@ export class HomeComponent implements OnInit {
   basicOptions: any;
   private router: Router;
 
-  constructor(router: Router) {
-    this.router = router;  // Injecter le Router ici
-    //Chart.register(...registerables);
+  constructor(router: Router,@Inject(PLATFORM_ID) private platformId: Object) {
+    this.router = router;
   }
 
    ngOnInit(): void {
-     this.initchart();
+     if (isPlatformBrowser(this.platformId)) {
+       this.initchart();
+     }
    }
 
 initchart(){
+  if (!isPlatformBrowser(this.platformId)) {
+    return;
+  }
   const documentStyle = getComputedStyle(document.documentElement);
   const textColor = documentStyle.getPropertyValue('--text-color');
   const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
@@ -105,84 +109,7 @@ initchart(){
     }
   };
 }
-  // createChart() {
-  //   this.chart = new Chart("UserChart", {
-  //     type: 'line',
-  //     data: {
-  //       labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin'], // Labels des mois
-  //       datasets: [{
-  //         label: 'Nombre d\'utilisateurs',
-  //         data: [100, 200, 300, 450, 600, 800], // Données des utilisateurs
-  //         borderColor: '#42A5F5', // Couleur de la courbe
-  //         backgroundColor: 'rgba(66, 165, 245, 0.2)', // Remplissage sous la courbe
-  //         fill: true,
-  //         tension: 0.4, // Courbe lissée
-  //         borderWidth: 2,
-  //         pointRadius: 5, // Taille des points sur la courbe
-  //         pointBackgroundColor: '#42A5F5', // Couleur des points
-  //         pointHoverRadius: 7, // Taille des points au survol
-  //         pointHoverBackgroundColor: '#1E88E5', // Couleur au survol
-  //         showLine: true // Affichage de la ligne de connexion
-  //       }]
-  //     },
-  //     options: {
-  //       responsive: true,
-  //       scales: {
-  //         y: {
-  //           beginAtZero: true,
-  //           ticks: {
-  //             color: '#000000', // Couleur des valeurs sur l'axe Y (Noir)
-  //             font: {
-  //               size: 12 // Taille des valeurs sur l'axe Y
-  //             }
-  //           },
-  //           grid: {
-  //             color: 'rgba(0, 0, 0, 0.1)' // Couleur des lignes de la grille (Noir clair)
-  //           }
-  //         },
-  //         x: {
-  //           ticks: {
-  //             color: '#000000', // Couleur des valeurs sur l'axe X (Noir)
-  //             font: {
-  //               size: 12 // Taille des valeurs sur l'axe X
-  //             }
-  //           },
-  //           grid: {
-  //             color: 'rgba(0, 0, 0, 0.1)' // Couleur des lignes de la grille (Noir clair)
-  //           }
-  //         }
-  //       },
-  //       plugins: {
-  //         legend: {
-  //           labels: {
-  //             color: '#000000', // Couleur des labels de la légende (Noir)
-  //             font: {
-  //               size: 14 // Taille des labels de la légende
-  //             }
-  //           }
-  //         },
-  //         tooltip: {
-  //           enabled: true, // Activation des tooltips
-  //           callbacks: {
-  //             label: (tooltipItem) => {
-  //               return `Utilisateurs : ${tooltipItem.raw}`; // Affichage des valeurs dans les tooltips
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   });
-  // }
 
-
-
-
-
-
-
-
-
-// Initialisation du tableau de tests
 Tests: Test[] = [
 
   {

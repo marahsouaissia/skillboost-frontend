@@ -82,7 +82,7 @@ export class TestComponent {
       id: 9,
       title: "Node.js",
       desc: "Node.js est un environnement d'exécution JavaScript côté serveur.",
-      imageUrl: "assets/images/Logo_Nodejs.png"
+      imageUrl: "assets/images/Logo_Nodejs.webp"
     },
     {
       id: 10,
@@ -114,6 +114,6 @@ export class TestComponent {
   navigateToTest(testItem: Test) {
     console.log('Redirection vers le test :', testItem.title);
     // Redirection vers la page des détails du test
-    this.router.navigate(['./test/test-details', testItem.id]); // Assurez-vous que le routeur est configuré pour accepter cet ID
+    this.router.navigate(['/confirm-test', testItem.id]); // Assurez-vous que le routeur est configuré pour accepter cet ID
   }
 }

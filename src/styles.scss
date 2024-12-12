@@ -1,4 +1,12 @@
 //@import "primeicons/primeicons.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Exo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --text-color: #333333;
+  --text-color-secondary: #666666;
+  --surface-border: #cccccc;
+}

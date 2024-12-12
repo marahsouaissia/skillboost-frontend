@@ -1,80 +1,94 @@
-/* Container principal */
-.test-details-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f9f9f9; /* Légère couleur de fond */
-  padding: 2rem;
-}
-
-/* Carte du test */
-.test-card {
-  max-width: 500px;
-  width: 100%;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  border-radius: 10px; /* Coins arrondis */
-  text-align: center;
-  background-color: #fff;
-}
-
-/* En-tête du test */
-.test-header {
+/* Structure générale */
+.test-page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Partie haute : Header */
+.test-header-section {
+  background-color: #4a90e2; /* Bleu plus clair */
+  color: white;
+  text-align: center;
+  padding: 2rem 1.5rem;
 }
 
 .test-logo {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 120px;
   margin-bottom: 1rem;
 }
 
 .test-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #333;
 }
 
-/* Corps du test */
+/* Partie basse : Détails du test */
+.test-details-section {
+  background-color: white;
+  flex-grow: 1;
+  padding: 2rem;
+  text-align: left;
+}
+
 .test-body {
   margin-bottom: 2rem;
 }
 
 .test-description {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #333;
   margin-bottom: 1rem;
-  line-height: 1.6;
 }
 
 .test-info {
   font-size: 1rem;
   color: #666;
   margin: 0.5rem 0;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Pied de la carte */
+/* Séparateur entre les sections */
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: #ddd;
+  margin: 1rem 0;
+}
+
+/* Pied de la section basse (Bouton) */
 .test-footer {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .start-test-btn {
-  background-color: #007bff;
+  background-color: #4a90e2; /* Bleu plus clair */
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
-  border-radius: 8px;
-  text-transform: uppercase;
+  border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .start-test-btn:hover {
-  background-color: #0056b3;
+  background-color: #357ab7; /* Un bleu un peu plus foncé */
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .test-header-section {
+    padding: 2rem 1rem;
+  }
+
+  .test-title {
+    font-size: 1.8rem;
+  }
 }

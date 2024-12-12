@@ -13,6 +13,10 @@ import {AuthRedirectGuard} from "./guard/auth-redirect.guard";
 import {AuthGuard} from "./guard/auth.guard";
 import {provideHttpClient} from "@angular/common/http";
 import {ConfirmTestComponent} from "./Home/test/confirm-test/confirm-test.component";
+import {SideNavComponent} from "./AdminDashboard/side-nav/side-nav.component";
+import {AdminMainComponent} from "./AdminDashboard/admin-main/admin-main.component";
+
+
 
 
 export const routes: Routes = [
@@ -26,7 +30,11 @@ export const routes: Routes = [
   {path: 'upload-cv' , component : UploadCvComponent, canActivate: [AuthGuard]},
   {path: 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
   {path: 'job-opportunities' , component : JobOpportunitiesComponent},
-  {path: 'confirm-test' , component : ConfirmTestComponent},
+  {path: 'confirm-test/:id' , component : ConfirmTestComponent},
+  {path: 'side-nav' , component : SideNavComponent},
+  {path: 'admin-main' , component : AdminMainComponent},
+
+
 
 
 

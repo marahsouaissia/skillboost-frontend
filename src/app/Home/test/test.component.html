@@ -6,8 +6,8 @@
 </div>
 
 <div class="test-list-container">
-  <div *ngFor="let test of Tests" (click)="navigateToTest(test)" class="test-list">
-    <div class="test-item">
+  <div *ngFor="let test of Tests"  class="test-list">
+    <div class="test-item" (click)="navigateToTest(test)">
       <img [src]="test.imageUrl" alt="{{ test.title }} logo" class="test-logo" />
       <div class="test-info">
         <h2 class="test-title">{{ test.title }}</h2>
