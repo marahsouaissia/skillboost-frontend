@@ -3,11 +3,17 @@
 <div class="custom-dialog" *ngIf="test">
   <div class="dialog-header">
     <button class="close-button" (click)="closeDialog()">&times;</button>
-  <div class="text-center">
+  </div>
+
+  <div *ngIf="data.imageUrl !== ''" class="text-center">
     <h2>Votre Badge</h2>
     <img [src]="data.imageUrl" alt="Badge" class="img-fluid" />
-  </div>
-  </div>
-  
 
+    <!-- Download Button -->
+    <button class="download-button" (click)="downloadImage()">Télécharger le Badge</button>
+  </div>
+
+  <div *ngIf="data.imageUrl === ''" class="text-center">
+    <h2>Vous n'avez pas de badge pour ce test</h2>
+  </div>
 </div>

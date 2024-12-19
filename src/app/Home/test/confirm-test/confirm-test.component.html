@@ -2,7 +2,7 @@
   <!-- Partie gauche : Header -->
   <div class="test-header-section">
     <div class="test-header">
-      <img [src]="'assets/images/Logo_angular.png'" alt="Test Logo" class="test-logo" />
+      <img [src]="apiUrl+test.logo" alt="TestModel Logo" class="test-logo" />
       <h1 class="test-title">{{ test.title }}</h1>
     </div>
   </div>
@@ -17,13 +17,10 @@
       <p class="test-info">
         <i class="pi pi-clock"></i> <strong>Durée :</strong> {{ test.duration }} minutes
       </p>
-      <p class="test-info">
-        <i class="pi pi-star"></i> <strong>Niveau :</strong> {{ test.level }}
-      </p>
     </div>
 
     <!-- Séparateur et bouton -->
-    <div class="test-footer">
+    <div class="test-footer" *ngIf="test.numberOfQuestions>0">
       <div class="separator"></div>
       <button pButton type="button" label="Démarrer le test" class="start-test-btn" (click)="startTest()"></button>
     </div>

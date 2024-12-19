@@ -3,6 +3,7 @@
     overflow: auto;
     height: 185px;
   }
+
   .title {
     padding: 20px;
     padding-bottom: 5px;
@@ -61,4 +62,9 @@
       }
     }
   }
+}
+p-chart ::ng-deep div{
+
+  width:100% !important; height:100% !important
+
 }

@@ -22,8 +22,9 @@ import {filter} from "rxjs";
 export class NavbarComponent implements OnInit {
   errorMessage: string
   user: User | null=null;
-
-  constructor(private userService: UserService, private router: Router) {
+role :string='';
+  constructor( private cookieService: CookieService,private userService: UserService, private router: Router) {
+     this.role = this.cookieService.get('role');
 
   }
 

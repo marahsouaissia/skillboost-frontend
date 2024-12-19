@@ -23,12 +23,21 @@ export class UploadCvComponent {
   selectedfile: File | null = null;
   cvPreviewUrl: SafeUrl | null = null; // For the CV preview in the popup
   showModal: boolean = false; // To toggle the popup visibility
+  cvs: any[] = []; // List of all CVs
 
   constructor(
     private cvservice: CvService,
     private sanitizer: DomSanitizer
-  ) {}
+  ) {
 
+    this.fetchAllCvs()
+  }
+  previewCv(cvPath: string): void {
+    this.cvPreviewUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      `http://localhost:3000${cvPath}`
+    );
+    this.showModal = true;
+  }
   // Handle file selection
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -63,7 +72,17 @@ export class UploadCvComponent {
       },
     });
   }
-
+  fetchAllCvs(): void {
+    this.cvservice.getAllCvs().subscribe({
+      next: (cvs) => {
+        this.cvs = cvs;
+      },
+      error: (err) => {
+        console.error("Error fetching CVs:", err);
+        this.errorMessage = "An error occurred while fetching CVs.";
+      }
+    });
+  }
   // Close the modal
   closeModal(): void {
     this.showModal = false;

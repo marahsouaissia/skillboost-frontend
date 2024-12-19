@@ -1,0 +1,181 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F9FAFB; /* Couleur de fond douce */
+  color: #333; /* Couleur de texte principale */
+  margin: 0;
+  padding: 0;
+}
+
+.manage-tests-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2, h3, h4 {
+  margin: 10px 0;
+  color: #064080; /* Bleu principal de SkillBoost */
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #b9bcbe; /* Couleur des bordures */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+input:focus, textarea:focus {
+  border-color: #0056b3; /* Bleu principal */
+  outline: none;
+  box-shadow: 0 0 8px #007bff;
+}
+
+button {
+  background-color: #007bff; /* Bleu principal */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 10px; /* Espacement entre les boutons */
+  margin-bottom: 10px; /* Espacement entre les lignes */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background-color: #0056b3; /* Bleu foncé pour le survol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background-color: #BDBDBD;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.test-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+table th {
+  background-color: #9ac5f6; /* Bleu principal */
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+}
+
+table tr {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+  background-color: #E3F2FD; /* Bleu clair pour le survol */
+}
+
+table tr.selected {
+  background-color: #e8f4ff; /* Bleu clair pour la ligne sélectionnée */
+}
+
+.edit-test, .add-test {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #FAFAFA;
+  padding: 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+ul li:hover {
+  background-color: #E3F2FD; /* Bleu clair pour le survol */
+}
+
+/* Boutons spécifiques aux actions */
+button.add-question {
+  background-color: #0056b3; /* Bleu foncé */
+}
+
+button.add-question:hover {
+  background-color: #007bff; /* Bleu principal */
+}
+
+button.delete-question {
+  background-color: #F44336; /* Rouge pour suppression */
+}
+
+button.delete-question:hover {
+  background-color: #D32F2F; /* Rouge foncé */
+}
+
+button.cancel-edit {
+  background-color: #757575; /* Gris pour annuler */
+}
+
+button.cancel-edit:hover {
+  background-color: #616161; /* Gris foncé */
+}
+
+/* Sections visuellement distinctes */
+.add-test, .edit-test, .test-list {
+  background-color: #fff;
+}
+
+.add-test {
+  border-left: 4px solid #007bff; /* Bleu principal */
+}
+
+.edit-test {
+  border-left: 4px solid #0056b3; /* Bleu foncé */
+}
+
+.test-list {
+  border-left: none;
+}

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  faLocation,
-  faShop,
-  faBoxes,
-  faMoneyBill,
-} from '@fortawesome/free-solid-svg-icons';
+import { faFlask, faUser, faComments } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 @Component({
   selector: 'app-top-widgets',
@@ -15,12 +10,15 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 })
 export class TopWidgetsComponent implements OnInit {
 
-  faLocation = faLocation;
-  faShop = faShop;
-  faBoxes = faBoxes;
-  faMoneyBill = faMoneyBill;
 
-  constructor() { }
+
+// Déclaration des icônes
+faFlask = faFlask;
+faUser = faUser;
+faComments = faComments;
+
+
+constructor() { }
 
   ngOnInit(): void {
   }

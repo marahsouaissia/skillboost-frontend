@@ -2,6 +2,10 @@
   background-color: #f1f4f6 !important; /* Dark blue background */
   color: #ffffff; /* White text for contrast */
   padding: 2rem 1rem;
+  display:flex;
+  bottom: 0;
+  position:relative;
+  width: 100%;
 }
 
 .footer h5 {

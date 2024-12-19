@@ -70,3 +70,35 @@
   background: rgba(0, 0, 0, 0.5); // Semi-transparent background
   z-index: 999; // Layer below the dialog
 }
+.download-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.close-button {
+  font-size: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

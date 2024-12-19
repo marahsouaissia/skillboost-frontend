@@ -1,17 +1,29 @@
 <div class="search-container">
   <p-floatLabel>
-    <input pInputText id="search" [(ngModel)]="value" class="input-search" />
+    <input
+      pInputText
+      id="search"
+      [(ngModel)]="value"
+      class="input-search"
+      (input)="filterTests()"
+    />
     <label for="search">Search</label>
   </p-floatLabel>
 </div>
 
 <div class="test-list-container">
-  <div *ngFor="let test of Tests"  class="test-list">
+  <!-- Show "No Results" message if no tests match -->
+  <div *ngIf="filteredTests.length === 0" class="no-results">
+    <p>No results found for "{{ value }}"</p>
+  </div>
+
+  <!-- Show tests if there are matches -->
+  <div *ngFor="let test of filteredTests" class="test-list">
     <div class="test-item" (click)="navigateToTest(test)">
-      <img [src]="test.imageUrl" alt="{{ test.title }} logo" class="test-logo" />
+      <img [src]="apiUrl + test.logo" alt="{{ test.title }} logo" class="test-logo" />
       <div class="test-info">
         <h2 class="test-title">{{ test.title }}</h2>
-        <p class="test-desc">{{ test.desc }}</p>
+        <p class="test-desc">{{ test.description }}</p>
       </div>
     </div>
   </div>

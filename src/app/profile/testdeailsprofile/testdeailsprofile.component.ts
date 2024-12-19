@@ -27,4 +27,16 @@ export class TestdeailsprofileComponent {
   closeDialog(): void {
     this.dialogRef.close();
   }
+  downloadImage(): void {
+    const link = document.createElement('a'); // Create an anchor element
+    link.href = this.data.imageUrl; // The URL of the image
+    link.download = 'badge.png'; // The name for the downloaded file
+
+    // Trigger the download
+    link.click();
+
+    // Cleanup the anchor element
+    link.remove();
+  }
+
 }

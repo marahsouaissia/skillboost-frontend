@@ -1,57 +1,156 @@
 body {
-  background: #eee !important;
+  /* Image de fond pastel bleue */
+  background: url('https://example.com/votre-image-pastel-bleue.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* Conteneur principal */
 .wrapper {
   margin-top: 80px;
   margin-bottom: 80px;
 }
 
+/* Timer simplifié, harmonisé avec le thème */
+.timer {
+  position: fixed;
+  top: 80px;         /* Plus proche du haut */
+  right: 200px;       /* Aligné à droite de l’écran */
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #1e67ea, #a4d9f5); /* Dégradé dans les tons bleus */
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  z-index: 9999;
+}
+
+.timer h1 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+/* Formulaire QCM */
 .form-qcm-test {
   max-width: 600px;
-  padding: 20px 40px;
+  padding: 30px 40px;
   margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  //background-image: url('/assets/images/back.jpg');
+}
+
+/* Titre du formulaire */
+.form-qcm-test-heading {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+/* Décoration du titre (barre pastel bleue) */
+.form-qcm-test-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #1e67ea, #a4d9f5);
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Questions */
+.question {
+  margin-bottom: 25px;
+}
+
+.question p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.question ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question ul li {
+  margin-bottom: 15px;
+}
+
+.question ul li label {
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.question ul li label:hover {
+  background: #f7f7f7;
+  color: #1e67ea;
+}
+
+.question ul li label input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Bouton d’envoi */
+.btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #1e67ea, #a4d9f5);
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s, transform 0.1s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #1e67ea 20%, #a4d9f5 80%);
+  transform: scale(1.02);
+}
+
+/* Ajustements Responsifs */
+@media (max-width: 600px) {
+  .form-qcm-test {
+    padding: 20px;
+  }
 
   .form-qcm-test-heading {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
   }
 
-  .question {
-    margin-bottom: 25px;
-
-    p {
-      font-size: 18px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 10px;
-
-        label {
-          font-size: 16px;
-          font-weight: normal;
-
-          input[type="radio"] {
-            margin-right: 10px;
-          }
-        }
-      }
-    }
-  }
-
-  .btn {
-    margin-top: 20px;
-    width: 100%;
+  .question p {
+    font-size: 16px;
   }
 }

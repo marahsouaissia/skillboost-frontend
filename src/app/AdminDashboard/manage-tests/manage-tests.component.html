@@ -1,0 +1,141 @@
+<div class="manage-tests-container">
+  <h1>Gestion des Tests</h1>
+
+  <!-- Formulaire pour ajouter un nouveau test -->
+  <form (ngSubmit)="addTest()" enctype="multipart/form-data">
+    <label for="title">Titre :</label>
+    <input id="title" [(ngModel)]="title" name="title" required />
+
+    <label for="description">Description :</label>
+    <textarea id="description" [(ngModel)]="description" name="description" required></textarea>
+
+    <label for="logo">Logo :</label>
+    <input type="file" id="logo" (change)="onFileSelected($event)" name="logo" />
+
+    <label for="duration">Durée (en minutes) :</label>
+    <input id="duration" type="number" [(ngModel)]="duration" name="duration" required />
+
+    <!-- Section des Questions -->
+    <h3>Ajouter des questions</h3>
+    <div *ngFor="let question of questions; let i = index">
+      <label>Question {{ i + 1 }} :</label>
+      <input
+        [(ngModel)]="questions[i].text"
+        placeholder="Texte de la question"
+        name="question-text-{{ i }}"
+        required
+      />
+
+      <label>Options (séparées par des virgules) :</label>
+      <input
+        [(ngModel)]="questions[i].choicesString"
+        (ngModelChange)="onChoicesChange($event, i)"
+        placeholder="Option 1, Option 2, ..."
+        name="choices-{{ i }}"
+        required
+      />
+
+      <label>Bonne réponse :</label>
+      <input
+        [(ngModel)]="questions[i].correctAnswer"
+        placeholder="Bonne réponse"
+        name="correctAnswer-{{ i }}"
+        required
+      />
+
+      <button type="button" (click)="removeQuestion(i)">Supprimer cette question</button>
+    </div>
+
+    <button type="button" (click)="addNewQuestionField()">Ajouter une question</button>
+    <button type="submit">Créer le test</button>
+  </form>
+
+  <!-- Liste des tests -->
+  <div class="test-list">
+    <h2>Liste des tests</h2>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Durée (minutes)</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Utilisez un ng-container pour regrouper les tr liés à chaque test -->
+      <ng-container *ngFor="let test of tests">
+        <tr>
+          <td>{{ test.title }}</td>
+          <td>{{ test.description }}</td>
+          <td>{{ test.duration }}</td>
+          <td>
+            <button (click)="selectTest(test)">Modifier</button>
+            <button (click)="deleteTest(test._id)">Supprimer</button>
+          </td>
+        </tr>
+        <!-- Ligne pour afficher les questions du test sélectionné -->
+        <tr *ngIf="selectedTest && selectedTest._id === test._id">
+          <td colspan="4">
+            <h4>Questions</h4>
+            <table>
+              <thead>
+              <tr>
+                <th>Question Text</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let question of selectedTest.questions">
+                <td>{{ question.text }}</td>
+                <td>
+                  <button (click)="deleteQuestion(question._id)">Supprimer</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Formulaire pour modifier un test -->
+  <div *ngIf="selectedTest" class="edit-test">
+    <h2>Modifier le Test</h2>
+    <form (ngSubmit)="updateTest()" enctype="multipart/form-data">
+      <label for="edit-title">Titre :</label>
+      <input
+        id="edit-title"
+        [(ngModel)]="selectedTest.title"
+        name="edit-title"
+        required
+      />
+
+      <label for="edit-description">Description :</label>
+      <textarea
+        id="edit-description"
+        [(ngModel)]="selectedTest.description"
+        name="edit-description"
+        required
+      ></textarea>
+
+      <label for="edit-duration">Durée (en minutes) :</label>
+      <input
+        type="number"
+        id="edit-duration"
+        [(ngModel)]="selectedTest.duration"
+        name="edit-duration"
+        required
+      />
+
+      <label for="edit-logo">Logo :</label>
+      <input type="file" id="edit-logo" (change)="onLogoSelected($event)" name="edit-logo" />
+
+      <button type="submit">Mettre à jour</button>
+      <button type="button" (click)="cancelEdit()">Annuler</button>
+    </form>
+  </div>
+</div>

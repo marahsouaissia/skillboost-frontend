@@ -11,6 +11,7 @@ import {LastFewTransactionsComponent} from "../last-few-transactions/last-few-tr
 import {TopThreeTestsComponent} from "../top-three-tests/top-three-tests.component";
 import {TestByCategoryComponent} from "../test-by-category/test-by-category.component";
 import {TestByMonthComponent} from "../test-by-month/test-by-month.component";
+import {FooterComponent} from "../../footer/footer.component";
 
 @Component({
   selector: 'app-admin-main',
@@ -21,7 +22,8 @@ import {TestByMonthComponent} from "../test-by-month/test-by-month.component";
     LastFewTransactionsComponent,
     TopThreeTestsComponent,
     TestByCategoryComponent,
-    TestByMonthComponent
+    TestByMonthComponent,
+    FooterComponent
   ],
   templateUrl: './admin-main.component.html',
   styleUrl: './admin-main.component.scss'

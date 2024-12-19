@@ -16,13 +16,19 @@ export class AuthRedirectGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean> | boolean {
     // Check if the 'jwt' cookie exists
     const token = this.cookieService.get('jwt');
+    const role = this.cookieService.get('role');
+
     if (token) {
-      // User is already logged in, redirect to the home page (or another protected page)
-      this.router.navigate(['']);
-      return false; // Prevent access to login page
-    } else {
-      // User is not logged in, allow access to the login page
-      return true;
+      // Redirect based on the user's role
+      if (role === 'admin') {
+        this.router.navigate(['/admin-main']); // Redirect to admin dashboard
+      } else {
+        this.router.navigate(['/profile']); // Redirect to user profile or another page
+      }
+      return false; // Prevent access to login/signup pages
     }
+
+    // User is not logged in, allow access to the page
+    return true;
   }
 }

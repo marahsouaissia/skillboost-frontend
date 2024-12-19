@@ -1,6 +1,10 @@
-<div class="nav-items">
-  <div class="nav-item" *ngFor="let item of navItems">
-    <fa-icon [icon]="item.icon"></fa-icon>
-    <span>{{ item.label }}</span>
+<div class="navbar">
+  <div class="nav-items">
+    <div class="nav-item" *ngFor="let item of navItems">
+      <a [routerLink]="item.route" class="nav-link">
+        <fa-icon [icon]="item.icon" class="nav-icon"></fa-icon>
+        <span class="nav-label">{{ item.label }}</span>
+      </a>
+    </div>
   </div>
 </div>

@@ -105,7 +105,7 @@ export class ProfileDetailsComponent implements OnInit {
           this.user = response.body;
 
           this.form.patchValue(this.user);
-
+          window.location.reload()
         }
       },
 

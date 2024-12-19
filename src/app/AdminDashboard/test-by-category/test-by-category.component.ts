@@ -40,13 +40,26 @@ export class TestByCategoryComponent  implements OnInit {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.basicData = {
-      labels: ['JAVA', 'HTML', 'CSS', 'C#'],
+      labels: ['Node.js', 'React', 'CSS', 'PHP'],
       datasets: [
         {
-          label: 'Test by users',
+          label: 'TestModel by users',
           data: [540, 325, 702, 620],
-          backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
-          borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],
+          backgroundColor: [
+            'rgb(175,108,95)',  // Tomate
+            'rgb(0, 255, 255)',  // Cyan vif
+            'rgb(187, 28, 107)',  // Hot pink
+            'rgb(69,106,197)'    // Lime vert
+          ],
+          borderColor: [
+            'rgb(175,108,95)',  // Tomate
+            'rgb(0, 255, 255)',  // Cyan vif
+            'rgb(255, 105, 180)', // Hot pink vif
+            'rgb(69,106,197)'    // Lime vert vif
+          ],
+
+
+
           borderWidth: 1
         }
       ]

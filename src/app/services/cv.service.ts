@@ -17,6 +17,16 @@ export class CvService {
     private router: Router
   ) {
   }
+  getAllCvs(): Observable<any[]> {
+    // Récupérer le token JWT depuis les cookies
+    const token = this.cookieService.get('jwt');
+
+    // Ajouter l'en-tête Authorization avec le token
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(`${this.apiUrl}/cv/get_my_cvs`,{headers});
+  }
 
   updateCv(file: File): Observable<HttpResponse<any>> {
     // Récupérer le token JWT depuis les cookies

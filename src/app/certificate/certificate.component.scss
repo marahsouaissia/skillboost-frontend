@@ -1,0 +1,346 @@
+.wrapper {
+  background-color: rgb(248, 233, 239);
+  background-image: url('/assets/img/bg.png'); /* Replace with your image path */
+  background-position: center; /* Centers the image */
+  margin-top: 10px;
+  padding: 80px;
+}
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  gap: 20px; /* Add spacing between question/options and the image */
+}
+
+.question-and-options {
+  flex: 2; /* Takes more space compared to the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.option-btn.selected {
+  background-color: #f0faf0; /* Highlight for selected option */
+}
+
+.option-btn:hover {
+  background-color: #e0f7fa;
+}
+
+.quiz-image {
+  flex: 1; /* Takes less space compared to the question/options */
+  max-width: 300px;
+  text-align: center;
+}
+
+.quiz-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .quiz-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quiz-image {
+    margin-top: 20px;
+  }
+}
+
+.navigation {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.prev-btn, .next-btn, .submit-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover, .submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  text-align: center;
+}
+
+.retry-btn {
+  padding: 10px 20px;
+  background-color: #99bdf6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background-color: #0c90ef;
+}
+.quiz-controls {
+  display: flex;
+  justify-content: flex-end; /* Moves the button to the right */
+  padding: 10px;
+}
+
+.btn-next {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-next:hover {
+  background-color: #0056b3;
+}
+.timer {
+  font-size: 18px;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+
+.certificate-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.certificate-container {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 10px solid;
+  border-image: linear-gradient(45deg, #570549, #ffcc00) 1;
+}
+
+.certificate-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.award-badge {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  height: 130px;
+  width: 130px;
+  margin-right: 10px;
+  background-color: transparent;
+}
+
+.badge-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.certificate-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  color: #003366; /* Dark Blue for a professional look */
+}
+
+.congratulations-message {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+.user-name {
+  font-size: 26px;
+  font-family: 'Georgia', serif;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.certificate-body-text {
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: italic;
+  color: #444444;
+}
+
+.certificate-footer {
+  margin-top: 50px;
+  font-size: 16px;
+  color: #e1e1e1;
+}
+
+.signatures {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.signature {
+  display: inline-block;
+  width: 45%;
+  border-bottom: 1px solid #003366;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #5299ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.download-btn:hover {
+  background-color: #8cc3d3;
+}
+
+
+
+
+
+//@page{
+//  size:A4 landscape;
+//  margin:10mm;
+//}
+//
+//.body_certificate{
+//  margin:0;
+//  padding:0;
+//  border:1mm solid #991B1B;
+//  height:188mm;
+//}
+//
+//.border-pattern{
+//  position:absolute;
+//  left:4mm;
+//  top:-6mm;
+//  height:200mm;
+//  width:267mm;
+//  border:1mm solid #991B1B;
+//  /* http://www.heropatterns.com/ */
+//  background-color: #d6d6e4;
+//  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%23991B1B' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+//}
+//
+//.content{
+//  position:absolute;
+//  left:10mm;
+//  top:10mm;
+//  height:178mm;
+//  width:245mm;
+//  border:1mm solid #991B1B;
+//  background:white;
+//}
+//
+//.inner-content{
+//  border:1mm solid #991B1B;
+//  margin:4mm;
+//  padding:10mm;
+//  height:148mm;
+//  text-align:center;
+//}
+//
+//h1{
+//  text-transform:uppercase;
+//  font-size:48pt;
+//  margin-bottom:0;
+//}
+//
+//h2{
+//  font-size:24pt;
+//  margin-top:0;
+//  padding-bottom:1mm;
+//  display:inline-block;
+//  border-bottom:1mm solid #991B1B;
+//}
+//
+//h2::after{
+//  content:"";
+//  display:block;
+//  padding-bottom:4mm;
+//  border-bottom:1mm solid #991B1B;
+//}
+//
+//h3{
+//  font-size:20pt;
+//  margin-bottom:0;
+//  margin-top:10mm;
+//}
+//
+//p{
+//  font-size:16pt;
+//}
+//
+//.badge{
+//  width:40mm;
+//  height:40mm;
+//  position:absolute;
+//  right:10mm;
+//  bottom:10mm;
+//  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' /%3E%3C/svg%3E");
+//}
+//.download-btn {
+//  background-color: #007bff;
+//  color: white;
+//  border: none;
+//  padding: 10px 15px;
+//  border-radius: 5px;
+//  cursor: pointer;
+//  margin: 5px;
+//  font-size: 16px;
+//  z-index: 999999999999999;
+//  &:hover {
+//    background-color: #0056b3;
+//  }
+//}
+//
+//.text-center {
+//  text-align: center;
+//}

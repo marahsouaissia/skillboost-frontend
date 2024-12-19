@@ -1,18 +1,10 @@
 <div class="wrapper">
   <form class="form-upload" (ngSubmit)="updateCv()">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
-    <!-- Error Message -->
-    <div *ngIf="errorMessage" class="alert alert-danger">
-      {{ errorMessage }}
-    </div>
-
-    <!-- Success Message -->
-    <div *ngIf="successMessage" class="alert alert-success">
-      {{ successMessage }}
-    </div>
-
-    <h2 class="form-upload-heading">Téléchargez votre CV</h2>
-    <p class="upload-instructions">Veuillez télécharger votre CV au format PDF.</p>
+    <h2 class="form-upload-heading">Téleverser votre CV</h2>
+    <p class="upload-instructions">SVP téleverser votre CV en forme pdf</p>
 
     <div class="file-upload">
       <input
@@ -25,22 +17,25 @@
       />
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Télécharger</button>
-
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Téleverser</button>
   </form>
 
-  <!-- Popup Modal -->
+  <h2 *ngIf="cvs.length>0">CV Téleversé</h2>
+
+  <ul *ngIf="cvs.length>0" class="cv-list">
+    <li *ngFor="let cv of cvs">
+      <span>{{ cv.name }} (Téleversé par: {{ cv.user_id?.name || 'Unknown User' }})</span>
+      <button (click)="previewCv(cv.file.path)">Votre CV</button>
+    </li>
+  </ul>
+
+  <!-- Modal -->
   <div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
   <div class="modal" *ngIf="showModal">
     <div class="modal-content">
       <span class="close" (click)="closeModal()">&times;</span>
-      <h3>Votre CV</h3>
-      <iframe
-        *ngIf="cvPreviewUrl"
-        [src]="cvPreviewUrl"
-        width="100%"
-        height="600px"
-      ></iframe>
+      <h3>Your CV</h3>
+      <iframe *ngIf="cvPreviewUrl" [src]="cvPreviewUrl" width="100%" height="600px"></iframe>
     </div>
   </div>
 </div>

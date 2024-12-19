@@ -56,8 +56,10 @@ export class LoginComponent implements OnInit {
         console.log('Réponse API:', res);
         this.successMessage = "Connexion réussie ! Bienvenue.";
         const token = res.body?.token;
+        const role = res.body?.role;
         if (token) {
           this.userService.savetoken(token);  // 1-day expiry
+          this.userService.saverole(role);  // 1-day expiry
           await this.router.navigate(['']);
         }
       },

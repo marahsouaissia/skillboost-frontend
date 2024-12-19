@@ -40,6 +40,13 @@ export class UserService {
     });
   }
 
+  getAllUsers(): Observable<User[]> {
+    const token = this.cookieService.get('jwt');
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
+    return this.http.get<User[]>(`${this.apiUrl}/user/getall`, { headers });
+  }
+
+
   updateProfile(userData: any, image?: File | null): Observable<HttpResponse<User>> {
     // Retrieve the token from cookies
     const token = this.cookieService.get('jwt');
@@ -109,15 +116,37 @@ export class UserService {
 
   removeToken(): void {
     this.cookieService.delete('jwt');
+    this.cookieService.delete('role');
   }
 savetoken(token:any): void {
   this.cookieService.set('jwt', token, 1, '/');  // 1-day expiry
+
+  }
+  saverole(role:any): void {
+  this.cookieService.set('role', role, 1, '/');  // 1-day expiry
 
   }
 
   istokeexist(): boolean {
     return this.cookieService.get('jwt') != null && this.cookieService.get('jwt') != '';
   }
+
+  // test.service.ts
+  deleteUser(userId: string): Observable<void> {
+    console.log('start deleted:')
+    const token = this.cookieService.get('jwt');
+    console.log('Token récupéré:', token); // Pour le débogage
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.delete<void>(`${this.apiUrl}/user/delete/${userId}`, { headers });
+  }
+
+
+
 
 
 

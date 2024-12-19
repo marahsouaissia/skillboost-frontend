@@ -1,0 +1,58 @@
+<div class="certificate-wrapper">
+  <div class="certificate-container">
+    <div class="certificate-header">
+      <!-- Image du badge dynamique si nécessaire -->
+      <!-- <img [src]="badgeImage" alt="Badge de récompense" class="award-badge"> -->
+      <h1 class="certificate-title">CERTIFICAT D'EXCELLENCE</h1>
+    </div>
+
+    <div class="certificate-body">
+      <p class="congratulations-message">DÉCERNÉ AVEC LES PLUS HAUTES DISTINCTIONS À</p>
+      <h2 class="user-name">{{ user.name }} {{ user.lastname }}</h2>
+
+      <p class="certificate-body-text">
+        Pour avoir brillamment complété le quiz <strong>{{ test.testTitle }}</strong>. Félicitations pour cette réussite !
+      </p>
+    </div>
+
+    <div class="certificate-footer">
+      <p class="date">Délivré le : {{ today | date:'d MMMM y' }}</p>
+      <div class="signatures">
+        <span class="signature">Signature : _______</span>
+        <span class="signature">Signature : _______</span>
+      </div>
+    </div>
+
+    <button class="download-btn" (click)="downloadAsPDF()">Télécharger la Certificat</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!--<div class="body_certificate">-->
+<!--  <div class="border-pattern">-->
+<!--    <div class="content">-->
+<!--      <div class="inner-content">-->
+<!--        <h1>Certificate</h1>-->
+<!--        <h2>of Excellence</h2>-->
+<!--        <h3>This Certificate Is Proudly Presented To</h3>-->
+<!--        <p>{{ user.name }}</p>-->
+<!--        <h3>Has Completed</h3>-->
+<!--        <p>{{ test.testTitle }}</p>-->
+<!--        <h3>On</h3>-->
+<!--        <p>{{ today | date:'MMMM d, y' }}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Buttons to trigger downloads &ndash;&gt;-->
+<!--<div class="text-center" style="margin-top: 20px;">-->
+<!--  <button class="download-btn" (click)="downloadAsImage()">Download as Image</button>-->
+<!--  <button class="download-btn" (click)="downloadAsPDF()">Download as PDF</button>-->
+<!--</div>-->

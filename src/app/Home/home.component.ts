@@ -4,11 +4,13 @@ import { OnInit } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import { Router } from '@angular/router';
 import {ChartModule} from "primeng/chart";
+import {FooterComponent} from "../footer/footer.component";
+
 //import { Chart, registerables } from 'chart.js';
 
 
 
-// Définition de l'interface Test
+// Définition de l'interface TestModel
 interface Test {
   id: number;
   title: string;
@@ -31,7 +33,8 @@ export class Feedback {
   "imports": [
     NgForOf,
     RouterLink,
-    ChartModule
+    ChartModule,
+    FooterComponent
   ],
   "templateUrl": './home.component.html',
   "styleUrl": './home.component.scss'
@@ -69,7 +72,7 @@ initchart(){
     labels: ['JAVA', 'HTML', 'CSS', 'C#'],
     datasets: [
       {
-        label: 'Test by users',
+        label: 'TestModel by users',
         data: [540, 325, 702, 620],
         backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
         borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],

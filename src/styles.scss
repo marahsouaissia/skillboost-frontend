@@ -10,3 +10,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --text-color-secondary: #666666;
   --surface-border: #cccccc;
 }
+/* Custom class for red snackbar */
+.snackbar-error {
+  background-color: #f44336 !important; /* Red background */
+  color: #ffffff !important; /* White text */
+  font-weight: bold;
+  text-align: center;
+}
+
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+  max-width: unset !important;
+  min-width: unset !important;
+}
